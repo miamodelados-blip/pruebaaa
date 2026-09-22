@@ -1,23 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JULIANA | Content Creator - UGC Portfolio</title>
-    <!-- Google Fonts for Editorial Aesthetic Look -->
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <title>CORINA VILLANUEVA | Freelance Portfolio</title>
+    <!-- Google Fonts / Tipografías Geométricas de apoyo -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@450;600;700&display=swap" rel="stylesheet">
     <!-- FontAwesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
         :root {
-            --bg-color: #FBF9F5;
-            --surface-color: #F3ECE2;
-            --text-primary: #2B231D;
-            --text-secondary: #6B5B52;
-            --accent-gold: #C5A059;
-            --accent-blush: #E8D3C8;
-            --border-color: rgba(107, 91, 82, 0.15);
+            --bg-color: #FFE083;          /* Amarillo pálido - fondo principal */
+            --surface-color: #C1A2E3;     /* Morado claro - bloques de contenido */
+            --text-primary: #796193;      /* Morado oscuro - textos y logotipos */
+            --accent-yellow: #FFC926;     /* Amarillo vibrante - detalles, sol, CTA */
+            --border-color: rgba(121, 97, 147, 0.2);
             --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
@@ -32,31 +30,41 @@
         }
 
         ::selection {
-            background-color: var(--accent-blush);
-            color: var(--text-primary);
+            background-color: var(--text-primary);
+            color: var(--bg-color);
         }
 
         body {
             background-color: var(--bg-color);
             color: var(--text-primary);
             font-family: 'Plus Jakarta Sans', sans-serif;
-            font-weight: 300;
+            font-weight: 450;
             line-height: 1.6;
             overflow-x: hidden;
         }
 
-        /* Typography */
-        h1, h2, h3, .serif-italic {
-            font-family: 'Cormorant Garamond', serif;
+        /* Patrón de puntos morados sobre amarillo pálido (Hero) */
+        .dotted-bg-purple {
+            background-color: var(--bg-color);
+            background-image: radial-gradient(var(--text-primary) 1.2px, transparent 1.2px);
+            background-size: 24px 24px;
         }
 
-        .italic-accent {
-            font-style: italic;
-            font-weight: 400;
-            color: var(--text-secondary);
+        /* Patrón de puntos morados pequeños (Moodboard izq) */
+        .dotted-box-purple {
+            background-color: var(--surface-color);
+            background-image: radial-gradient(var(--text-primary) 1px, transparent 1px);
+            background-size: 14px 14px;
         }
 
-        /* Layout & Navigation */
+        /* Patrón de puntos amarillos pequeños (Moodboard der) */
+        .dotted-box-yellow {
+            background-color: var(--surface-color);
+            background-image: radial-gradient(var(--accent-yellow) 1.2px, transparent 1.2px);
+            background-size: 14px 14px;
+        }
+
+        /* Layout & Navigation Base */
         header {
             position: fixed;
             top: 0;
@@ -66,18 +74,20 @@
             justify-content: space-between;
             align-items: center;
             padding: 1.2rem 5%;
-            background: rgba(251, 249, 245, 0.9);
+            background: rgba(255, 224, 131, 0.88);
             backdrop-filter: blur(12px);
             z-index: 1000;
             border-bottom: 1px solid var(--border-color);
         }
 
-        .logo {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.5rem;
+        .logo-nav {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 1.1rem;
             letter-spacing: 0.15em;
             text-transform: uppercase;
-            font-weight: 600;
+            font-weight: 700;
+            color: var(--text-primary);
+            text-decoration: none;
         }
 
         .nav-links {
@@ -93,11 +103,12 @@
             font-size: 0.85rem;
             letter-spacing: 0.1em;
             text-transform: uppercase;
+            font-weight: 600;
             transition: var(--transition);
         }
 
         .nav-links a:hover {
-            color: var(--accent-gold);
+            opacity: 0.7;
         }
 
         .btn-cta {
@@ -109,13 +120,14 @@
             font-size: 0.8rem;
             letter-spacing: 0.08em;
             text-transform: uppercase;
+            font-weight: 600;
             transition: var(--transition);
             display: inline-block;
         }
 
         .btn-cta:hover {
-            background-color: var(--accent-gold);
-            color: #fff;
+            background-color: var(--accent-yellow);
+            color: var(--text-primary);
             transform: translateY(-2px);
         }
 
@@ -128,288 +140,197 @@
             cursor: pointer;
         }
 
-        /* Hero Section */
+        /* Hero / Logotipo Principal Section */
         .hero-section {
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            min-height: 100vh;
-            padding: 8rem 5% 4rem 5%;
-            gap: 4rem;
-            align-items: center;
-            max-width: 1440px;
-            margin: 0 auto;
-        }
-
-        .hero-content h1 {
-            font-size: clamp(3rem, 5.5vw, 5.2rem);
-            line-height: 1.05;
-            letter-spacing: -0.02em;
-            margin-bottom: 1.5rem;
-        }
-
-        .hero-content p {
-            font-size: 1.1rem;
-            color: var(--text-secondary);
-            max-width: 520px;
-            margin-bottom: 2.5rem;
-        }
-
-        .hero-meta {
-            display: flex;
-            gap: 3rem;
-            margin-bottom: 2.5rem;
-            border-top: 1px solid var(--border-color);
-            border-bottom: 1px solid var(--border-color);
-            padding: 1.2rem 0;
-        }
-
-        .meta-item h4 {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            font-size: 0.75rem;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            color: var(--text-secondary);
-            margin-bottom: 0.2rem;
-        }
-
-        .meta-item p {
-            font-size: 0.95rem;
-            font-weight: 500;
-            color: var(--text-primary);
-            margin-bottom: 0;
-        }
-
-        .hero-visual {
-            position: relative;
-            height: 600px;
-            border-radius: 12px;
-            overflow: hidden;
-            background-color: var(--surface-color);
-        }
-
-        .hero-visual img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            filter: sepia(10%) contrast(105%);
-            transition: var(--transition);
-        }
-
-        .hero-visual:hover img {
-            transform: scale(1.03);
-        }
-
-        .scroll-down {
-            position: absolute;
-            bottom: 2rem;
-            left: 5%;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            font-size: 0.75rem;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: var(--text-secondary);
-            background: rgba(251, 249, 245, 0.7);
-            padding: 0.4rem 0.8rem;
-            border-radius: 30px;
-            backdrop-filter: blur(4px);
-        }
-
-        .scroll-down i {
-            animation: bounce 2s infinite;
-        }
-
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
-            40% {transform: translateY(4px);}
-            60% {transform: translateY(2px);}
-        }
-
-        /* Sections General */
-        section {
-            padding: 7rem 5%;
-            max-width: 1440px;
-            margin: 0 auto;
-        }
-
-        .section-header {
-            margin-bottom: 4rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 1.5rem;
-        }
-
-        .section-header h2 {
-            font-size: clamp(2.2rem, 4vw, 3.2rem);
-            font-weight: 400;
-        }
-
-        .section-header span {
-            font-size: 0.85rem;
-            letter-spacing: 0.15em;
-            color: var(--text-secondary);
-            text-transform: uppercase;
-        }
-
-        /* About / Hi Brands */
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 5rem;
-            align-items: center;
-        }
-
-        .about-text h3 {
-            font-size: 2.2rem;
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
-        }
-
-        .about-text p {
-            color: var(--text-secondary);
-            margin-bottom: 1.5rem;
-            font-size: 1.05rem;
-        }
-
-        .pill-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.6rem;
-            margin-top: 2rem;
-        }
-
-        .pill {
-            background-color: var(--surface-color);
-            border: 1px solid var(--border-color);
-            padding: 0.4rem 1rem;
-            border-radius: 50px;
-            font-size: 0.8rem;
-            color: var(--text-secondary);
-            letter-spacing: 0.05em;
-        }
-
-        /* Portfolio / Video Grid */
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-        }
-
-        .portfolio-item {
-            position: relative;
-            background: var(--surface-color);
-            border-radius: 12px;
-            overflow: hidden;
-            aspect-ratio: 9/16;
-            cursor: pointer;
-            box-shadow: 0 10px 30px rgba(43, 35, 29, 0.04);
-            transition: var(--transition);
-        }
-
-        .portfolio-item:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(43, 35, 29, 0.08);
-        }
-
-        .portfolio-item video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .portfolio-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to top, rgba(43,35,29,0.75) 0%, transparent 60%);
+            min-height: 90vh;
+            padding: 9rem 5% 5rem 5%;
             display: flex;
             flex-direction: column;
-            justify-content: flex-end;
-            padding: 1.5rem;
-            opacity: 0;
-            transition: var(--transition);
-        }
-
-        .portfolio-item:hover .portfolio-overlay,
-        .portfolio-item:focus-within .portfolio-overlay {
-            opacity: 1;
-        }
-
-        .portfolio-overlay span {
-            color: var(--accent-blush);
-            font-size: 0.75rem;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-        }
-
-        .portfolio-overlay h4 {
-            color: #fff;
-            font-size: 1.4rem;
-            font-weight: 400;
-        }
-
-        /* Selected Partnerships / Brands */
-        .brands-container {
-            display: flex;
-            justify-content: space-around;
             align-items: center;
-            flex-wrap: wrap;
-            gap: 3rem;
-            padding: 3rem 0;
-            border-top: 1px solid var(--border-color);
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .brand-logo {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.8rem;
-            letter-spacing: 0.2em;
-            color: var(--text-secondary);
-            opacity: 0.7;
-            transition: var(--transition);
-        }
-
-        .brand-logo:hover {
-            opacity: 1;
-            color: var(--text-primary);
-        }
-
-        /* Contact Section */
-        .contact-section {
+            justify-content: center;
             text-align: center;
-            padding: 8rem 5%;
-            background-color: var(--surface-color);
-            border-radius: 20px;
-            margin: 4rem 5%;
         }
 
-        .contact-section h2 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            margin-bottom: 1.5rem;
-            font-weight: 400;
+        .main-logo-container {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 0.5rem;
         }
 
-        .contact-section p {
-            color: var(--text-secondary);
-            max-width: 500px;
-            margin: 0 auto 2.5rem auto;
-            font-size: 1.1rem;
+        .flower-icon {
+            color: var(--accent-yellow);
+            font-size: 3.5rem;
+            display: block;
+            margin: 0 auto -0.8rem auto;
+            filter: drop-shadow(0 2px 4px rgba(121, 97, 147, 0.15));
         }
 
-        .email-link {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(1.8rem, 3vw, 2.8rem);
+        .main-logo-title {
+            font-family: Georgia, 'Times New Roman', serif; /* Simula cursiva audaz/ornamentada estilo TT Hazelnuts */
+            font-style: italic;
+            font-weight: 700;
+            font-size: clamp(4rem, 10vw, 7.5rem);
             color: var(--text-primary);
-            text-decoration: none;
-            border-bottom: 1px solid var(--accent-gold);
-            padding-bottom: 0.2rem;
-            transition: var(--transition);
+            line-height: 1;
+            letter-spacing: -0.02em;
         }
 
-        .email-link:hover {
-            color: var(--accent-gold);
+        .sub-subtitle {
+            font-size: clamp(0.9rem, 2vw, 1.2rem);
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--text-primary);
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+
+        /* Área de Llamada a la Acción (CTA) en dos columnas inferiores */
+        .cta-split-section {
+            max-width: 1300px;
+            margin: 2rem auto;
+            padding: 0 5%;
+        }
+
+        .cta-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 480px;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(121, 97, 147, 0.12);
+        }
+
+        /* Columna Izquierda (Amarillo vibrante / CTA) */
+        .cta-col-left {
+            background-color: var(--accent-yellow);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 4rem 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        /* Columna Derecha (Morado claro) */
+        .cta-col-right {
+            background-color: var(--surface-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 4rem 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        /* Logotipos circulares secundarios simulados con CSS SVG/Rotación de texto */
+        .badge-circle-wrapper {
+            position: relative;
+            width: 190px;
+            height: 190px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        .badge-center-c {
+            font-family: Georgia, serif;
+            font-size: 5.5rem;
+            font-style: italic;
+            font-weight: bold;
+            color: var(--text-primary);
+            line-height: 0;
+            z-index: 2;
+        }
+
+        .badge-circle-right .badge-center-c {
+            color: var(--bg-color);
+        }
+
+        .rotating-text-svg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            animation: rotateBadge 18s linear infinite;
+        }
+
+        .rotating-text-svg text {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 11.5px;
+            font-weight: 700;
+            letter-spacing: 2.2px;
+            text-transform: uppercase;
+            fill: var(--text-primary);
+        }
+
+        .badge-circle-right .rotating-text-svg text {
+            fill: var(--text-primary);
+        }
+
+        @keyframes rotateBadge {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .badge-label-action {
+            font-size: 0.85rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        /* Gráficos de Soporte (Sección 'Moodboard') */
+        .moodboard-section {
+            max-width: 1300px;
+            margin: 6rem auto 4rem auto;
+            padding: 0 5%;
+        }
+
+        .moodboard-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 0.85rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--text-primary);
+            font-weight: 700;
+        }
+
+        .moodboard-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.6fr 1fr;
+            gap: 2rem;
+            align-items: stretch;
+            min-height: 240px;
+        }
+
+        .moodboard-card {
+            border-radius: 18px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 220px;
+        }
+
+        /* Gran sol amarillo estilizado en el centro */
+        .giant-sun-container {
+            background-color: var(--surface-color);
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .giant-sun {
+            width: 100%;
+            height: 180px;
+            color: var(--accent-yellow);
         }
 
         /* Footer */
@@ -419,9 +340,11 @@
             justify-content: space-between;
             align-items: center;
             font-size: 0.8rem;
-            color: var(--text-secondary);
-            max-width: 1440px;
+            color: var(--text-primary);
+            font-weight: 600;
+            max-width: 1300px;
             margin: 0 auto;
+            border-top: 1px solid var(--border-color);
             flex-wrap: wrap;
             gap: 1.5rem;
         }
@@ -434,12 +357,12 @@
         .footer-socials a {
             color: var(--text-primary);
             text-decoration: none;
-            font-size: 1rem;
+            font-size: 1.1rem;
             transition: var(--transition);
         }
 
         .footer-socials a:hover {
-            color: var(--accent-gold);
+            opacity: 0.6;
         }
 
         /* Responsive */
@@ -469,167 +392,104 @@
                 pointer-events: auto;
             }
 
-            .hero-section {
+            .cta-grid {
                 grid-template-columns: 1fr;
-                padding-top: 7rem;
-                gap: 2.5rem;
             }
-            .hero-visual {
-                height: 420px;
-            }
-            .about-grid {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-            }
-            .portfolio-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
 
-        @media(max-width: 600px) {
-            .portfolio-grid {
+            .moodboard-grid {
                 grid-template-columns: 1fr;
-            }
-            .hero-meta {
-                flex-direction: column;
-                gap: 1rem;
             }
         }
     </style>
 </head>
-<body>
+<body class="dotted-bg-purple">
 
     <!-- Header -->
     <header>
-        <div class="logo">Juliana.</div>
-        <button class="mobile-menu-toggle" aria-label="Toggle Menu" id="menuToggle">
+        <a href="#" class="logo-nav">Corina V.</a>
+        <button class="mobile-menu-toggle" aria-label="Abrir menú" id="menuToggle">
             <i class="fa-solid fa-bars"></i>
         </button>
         <ul class="nav-links" id="navLinks">
-            <li><a href="#about" class="nav-close">About</a></li>
-            <li><a href="#portfolio" class="nav-close">Portfolio</a></li>
-            <li><a href="#partnerships" class="nav-close">Partnerships</a></li>
-            <li><a href="#contact" class="btn-cta nav-close">Let's Create</a></li>
+            <li><a href="#hero" class="nav-close">Inicio</a></li>
+            <li><a href="#cta-area" class="nav-close">Servicios</a></li>
+            <li><a href="#moodboard" class="nav-close">Moodboard</a></li>
+            <li><a href="#cta-area" class="btn-cta nav-close">Contacto</a></li>
         </ul>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero-section">
-        <div class="hero-content">
-            <span class="italic-accent" style="font-size: 1.2rem; display: block; margin-bottom: 0.8rem;">UGC Portfolio</span>
-            <h1>Curating visual stories that elevate brand aesthetics.</h1>
-            <p>Specializing in beauty, wellness, and lifestyle content that feels warm, natural, and scroll-stopping—not forced or overly staged.</p>
+    <!-- Hero Section / Logotipo Principal -->
+    <section id="hero" class="hero-section">
+        <div class="main-logo-container">
+            <i class="fa-solid fa-sun flower-icon"></i>
+            <h1 class="main-logo-title">corina</h1>
+        </div>
+        <div class="sub-subtitle">CORINA VILLANUEVA</div>
+    </section>
 
-            <div class="hero-meta">
-                <div class="meta-item">
-                    <h4>Location</h4>
-                    <p>Los Angeles, CA</p>
+    <!-- Área de Llamada a la Acción (CTA) - 2 Columnas -->
+    <section id="cta-area" class="cta-split-section">
+        <div class="cta-grid">
+            <!-- Columna Izquierda (Amarillo) -->
+            <div class="cta-col-left">
+                <span class="badge-label-action">Proyectos Creativos</span>
+                <div class="badge-circle-wrapper">
+                    <span class="badge-center-c">C</span>
+                    <svg class="rotating-text-svg" viewBox="0 0 200 200">
+                        <path id="circlePath1" d="M 100, 100 m -75, 0 a 75,75 0 1,1 150,0 a 75,75 0 1,1 -150,0" fill="transparent"/>
+                        <text><textPath href="#circlePath1" startOffset="0%">CORINA VILLANUEVA • CORINA VILLANUEVA • </textPath></text>
+                    </svg>
                 </div>
-                <div class="meta-item">
-                    <h4>Experience</h4>
-                    <p>1+ Year / 50+ Videos</p>
-                </div>
-                <div class="meta-item">
-                    <h4>Niche</h4>
-                    <p>Beauty, Skincare, Hair</p>
-                </div>
+                <a href="mailto:hola@corinavillanueva.com" class="btn-cta">Hablemos</a>
             </div>
 
-            <a href="#contact" class="btn-cta">Get in touch</a>
-        </div>
-
-        <div class="hero-visual">
-            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1000&q=80" alt="Juliana Portrait">
-            <div class="scroll-down">
-                <i class="fa-solid fa-arrow-down-long"></i>
-                <span>Scroll</span>
+            <!-- Columna Derecha (Morado Claro) -->
+            <div class="cta-col-right" style="color: var(--text-primary);">
+                <span class="badge-label-action" style="color: var(--text-primary);">Disponibilidad</span>
+                <div class="badge-circle-wrapper badge-circle-right">
+                    <span class="badge-center-c">C</span>
+                    <svg class="rotating-text-svg" viewBox="0 0 200 200">
+                        <path id="circlePath2" d="M 100, 100 m -75, 0 a 75,75 0 1,1 150,0 a 75,75 0 1,1 -150,0" fill="transparent"/>
+                        <text><textPath href="#circlePath2" startOffset="0%">CORINA VILLANUEVA • FREELANCER • </textPath></text>
+                    </svg>
+                </div>
+                <a href="mailto:hola@corinavillanueva.com" class="btn-cta" style="background-color: var(--text-primary); color: var(--bg-color);">Colaboremos</a>
             </div>
         </div>
     </section>
 
-    <!-- About Me Section -->
-    <section id="about">
-        <div class="about-grid">
-            <div class="about-text">
-                <span class="italic-accent">About Me</span>
-                <h3 style="margin-top: 0.5rem;">Hi Brands! Your product deserves content people actually want to watch.</h3>
-                <p>I am a Los Angeles-based UGC creator focusing on aesthetic visuals, product details, natural routines, and content that feels both organic and ad-ready.</p>
-                <p>My visual style is warm, feminine, sunkissed, and polished with soft brown, buttermilk, beige, white, and pink tones, glossy beauty details, natural light, and clean lifestyle settings.</p>
-                <div class="pill-tags">
-                    <span class="pill">Strong B-Roll</span>
-                    <span class="pill">Clean Product Shots</span>
-                    <span class="pill">Natural Application</span>
-                    <span class="pill">Warm Lighting</span>
-                    <span class="pill">Dynamic Editing</span>
-                </div>
-            </div>
-            <div style="background: var(--surface-color); border-radius: 12px; height: 450px; overflow: hidden; display: flex; align-items: center; justify-content: center;">
-                <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=800&q=80" alt="Lifestyle aesthetic" style="width: 100%; height: 100%; object-fit: cover;">
-            </div>
-        </div>
-    </section>
+    <!-- Gráficos de Soporte (Sección 'Moodboard') -->
+    <section id="moodboard" class="moodboard-section">
+        <div class="moodboard-header">MOODBOARD</div>
+        <div class="moodboard-grid">
+            <!-- Patrón de puntos morados pequeños a la izquierda -->
+            <div class="moodboard-card dotted-box-purple"></div>
 
-    <!-- Selected Partnerships / Brands -->
-    <section id="partnerships">
-        <div class="section-header">
-            <h2>Selected partnerships</h2>
-            <span>Brands I've worked with</span>
-        </div>
-        <div class="brands-container">
-            <div class="brand-logo">VICHY</div>
-            <div class="brand-logo">ETUDE</div>
-            <div class="brand-logo">MERIT</div>
-            <div class="brand-logo">GLOSSIER</div>
-            <div class="brand-logo">SENSIBIO</div>
-        </div>
-    </section>
+            <!-- Gran sol amarillo estilizado en el centro -->
+            <div class="moodboard-card giant-sun-container">
+                <svg class="giant-sun" viewBox="0 0 500 250" preserveAspectRatio="none">
+                    <path d="M 250, 250 L 15, 250 L 70, 115 Z" fill="#FFC926"/>
+                    <path d="M 250, 250 L 115, 250 L 140, 70 Z" fill="#FFC926"/>
+                    <path d="M 250, 250 L 210, 250 L 220, 20 Z" fill="#FFC926"/>
+                    <path d="M 250, 250 L 290, 250 L 280, 20 Z" fill="#FFC926"/>
+                    <path d="M 250, 250 L 385, 250 L 360, 70 Z" fill="#FFC926"/>
+                    <path d="M 250, 250 L 485, 250 L 430, 115 Z" fill="#FFC926"/>
+                    <path d="M 0, 250 L 500, 250 L 500, 230 L 0, 230 Z" fill="#FFC926"/>
+                </svg>
+            </div>
 
-    <!-- Portfolio Section -->
-    <section id="portfolio">
-        <div class="section-header">
-            <h2>Recent Work</h2>
-            <span>UGC Reel & Content</span>
+            <!-- Patrón de puntos amarillos pequeños a la derecha -->
+            <div class="moodboard-card dotted-box-yellow"></div>
         </div>
-        <div class="portfolio-grid">
-            <div class="portfolio-item">
-                <video autoplay muted loop playsinline preload="metadata" src="https://assets.mixkit.co/videos/preview/mixkit-skin-care-routine-with-cream-42790-large.mp4"></video>
-                <div class="portfolio-overlay">
-                    <span>Skincare / ASMR</span>
-                    <h4>Glow Serum Routine</h4>
-                </div>
-            </div>
-            <div class="portfolio-item">
-                <video autoplay muted loop playsinline preload="metadata" src="https://assets.mixkit.co/videos/preview/mixkit-woman-applying-lipstick-in-front-of-a-mirror-42795-large.mp4"></video>
-                <div class="portfolio-overlay">
-                    <span>Beauty / Lip Care</span>
-                    <h4>Glossy Finish Test</h4>
-                </div>
-            </div>
-            <div class="portfolio-item">
-                <video autoplay muted loop playsinline preload="metadata" src="https://assets.mixkit.co/videos/preview/mixkit-hands-holding-a-glass-jar-of-face-cream-42792-large.mp4"></video>
-                <div class="portfolio-overlay">
-                    <span>Product Showcase</span>
-                    <h4>Unboxing & Texture</h4>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section">
-        <span class="italic-accent">Let's collaborate</span>
-        <h2>Ready to elevate your brand content?</h2>
-        <p>Drop a line for rates, media kit, and custom project packages.</p>
-        <a href="mailto:ugc@xojuliana.com" class="email-link">ugc@xojuliana.com</a>
     </section>
 
     <!-- Footer -->
     <footer>
-        <div>© 2026 Juliana. All rights reserved. Aesthetic UGC Creator.</div>
+        <div>© 2026 CORINA VILLANUEVA. All rights reserved.</div>
         <div class="footer-socials">
             <a href="https://instagram.com" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i></a>
-            <a href="https://tiktok.com" target="_blank" rel="noopener"><i class="fa-brands fa-tiktok"></i></a>
-            <a href="mailto:ugc@xojuliana.com"><i class="fa-regular fa-envelope"></i></a>
+            <a href="https://behance.net" target="_blank" rel="noopener"><i class="fa-brands fa-behance"></i></a>
+            <a href="mailto:hola@corinavillanueva.com"><i class="fa-regular fa-envelope"></i></a>
         </div>
     </footer>
 
