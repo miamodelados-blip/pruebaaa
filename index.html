@@ -62,7 +62,7 @@ header{position:fixed;inset:0 0 auto 0;z-index:50;padding:.8rem 1rem;pointer-eve
 .nav{
   pointer-events:auto;max-width:var(--max);margin-inline:auto;
   display:flex;align-items:center;justify-content:space-between;gap:1rem;
-  background:rgba(255,244,248,.92);backdrop-filter:blur(8px);
+  background:rgba(255,244,248,.97);
   border:2.5px solid var(--tinta);border-radius:999px;padding:.5rem .6rem .5rem 1.2rem;
 }
 .logo{font-family:var(--serif);font-weight:900;font-size:1.4rem;text-decoration:none;color:var(--fucsia)}
@@ -187,8 +187,22 @@ header{position:fixed;inset:0 0 auto 0;z-index:50;padding:.8rem 1rem;pointer-eve
 .contacto .acciones{display:flex;flex-wrap:wrap;gap:1rem;justify-content:center}
 .contacto .btn.claro{background:var(--fondo);color:var(--tinta)}
 
+/* Formulario de mail */
+.mail{margin:2.5rem auto 0;max-width:520px;text-align:left;display:grid;gap:1rem;
+  background:var(--fondo);color:var(--tinta);border:3px solid var(--tinta);
+  border-radius:var(--radio);padding:1.6rem;box-shadow:5px 5px 0 var(--tinta)}
+.mail h3{font-size:1.6rem;color:var(--fucsia)}
+.mail label{display:grid;gap:.35rem;font-weight:700;font-size:.95rem}
+.mail input,.mail textarea{font:inherit;font-weight:400;color:var(--tinta);background:#fff;
+  border:2.5px solid var(--tinta);border-radius:16px;padding:.7em 1em;width:100%}
+.mail textarea{min-height:120px;resize:vertical}
+.mail button.btn{justify-self:start;cursor:pointer;font-family:var(--sans);font-size:1rem;color:var(--tinta)}
+.mail small{font-size:.85rem}
+
 /* ============ 10. FOOTER ============ */
 footer{padding:2.5rem 0 3rem;text-align:center;font-size:.95rem}
+.credito{display:block;margin-top:1.4rem;font-size:.72rem;opacity:.65;text-decoration:none}
+.credito:hover{opacity:1;color:var(--fucsia)}
 footer strong{font-family:var(--serif);font-size:1.3rem;color:var(--fucsia)}
 
 /* ============ 11. ESCRITORIO ============ */
@@ -202,8 +216,7 @@ footer strong{font-family:var(--serif);font-size:1.3rem;color:var(--fucsia)}
   .sobre .caja{grid-template-columns:1fr 1fr;padding:3rem;gap:3rem}
   .grid-marcas{grid-template-columns:repeat(3,1fr);gap:1.4rem}
   .reel{flex:0 0 calc(25% - .85rem)}
-  .reel:nth-child(odd){transform:rotate(-1.5deg)}
-  .reel:nth-child(even){transform:rotate(1.5deg) translateY(14px)}
+  .reel:nth-child(even){transform:translateY(14px)}
   .pista{display:none}
   .grid-fotos{grid-template-columns:repeat(3,1fr);gap:1.4rem}
   .foto:nth-child(3n+2){transform:translateY(24px)}
@@ -306,16 +319,16 @@ footer strong{font-family:var(--serif);font-size:1.3rem;color:var(--fucsia)}
       <p class="pista">Deslizá para ver más. Tocá los botones para pausar o activar el sonido.</p>
       <!-- Los botones de cada reel los agrega el JS. Para sumar videos, copiá un bloque .reel -->
       <div class="reels" id="reels-track">
-        <div class="reel"><video src="video_1.mp4" muted loop playsinline preload="metadata" aria-label="Reel 1"></video></div>
-        <div class="reel"><video src="video_2.mp4" muted loop playsinline preload="metadata" aria-label="Reel 2"></video></div>
-        <div class="reel"><video src="video_3.mp4" muted loop playsinline preload="metadata" aria-label="Reel 3"></video></div>
-        <div class="reel"><video src="video_4.mp4" muted loop playsinline preload="metadata" aria-label="Reel 4"></video></div>
-        <div class="reel"><video src="video_5.mp4" muted loop playsinline preload="metadata" aria-label="Reel 5"></video></div>
-        <div class="reel"><video src="video_6.mp4" muted loop playsinline preload="metadata" aria-label="Reel 6"></video></div>
-        <div class="reel"><video src="video_7.mp4" muted loop playsinline preload="metadata" aria-label="Reel 7"></video></div>
-        <div class="reel"><video src="video_8.mp4" muted loop playsinline preload="metadata" aria-label="Reel 8"></video></div>
-        <div class="reel"><video src="video_9.mp4" muted loop playsinline preload="metadata" aria-label="Reel 9"></video></div>
-        <div class="reel"><video src="video_10.mp4" muted loop playsinline preload="metadata" aria-label="Reel 10"></video></div>
+        <div class="reel"><video data-src="video_1.mp4" muted loop playsinline preload="none" disablepictureinpicture aria-label="Reel 1"></video></div>
+        <div class="reel"><video data-src="video_2.mp4" muted loop playsinline preload="none" disablepictureinpicture aria-label="Reel 2"></video></div>
+        <div class="reel"><video data-src="video_3.mp4" muted loop playsinline preload="none" disablepictureinpicture aria-label="Reel 3"></video></div>
+        <div class="reel"><video data-src="video_4.mp4" muted loop playsinline preload="none" disablepictureinpicture aria-label="Reel 4"></video></div>
+        <div class="reel"><video data-src="video_5.mp4" muted loop playsinline preload="none" disablepictureinpicture aria-label="Reel 5"></video></div>
+        <div class="reel"><video data-src="video_6.mp4" muted loop playsinline preload="none" disablepictureinpicture aria-label="Reel 6"></video></div>
+        <div class="reel"><video data-src="video_7.mp4" muted loop playsinline preload="none" disablepictureinpicture aria-label="Reel 7"></video></div>
+        <div class="reel"><video data-src="video_8.mp4" muted loop playsinline preload="none" disablepictureinpicture aria-label="Reel 8"></video></div>
+        <div class="reel"><video data-src="video_9.mp4" muted loop playsinline preload="none" disablepictureinpicture aria-label="Reel 9"></video></div>
+        <div class="reel"><video data-src="video_10.mp4" muted loop playsinline preload="none" disablepictureinpicture aria-label="Reel 10"></video></div>
       </div>
     </div>
   </section>
@@ -359,6 +372,19 @@ footer strong{font-family:var(--serif);font-size:1.3rem;color:var(--fucsia)}
           <a class="btn" href="https://ig.me/m/hola.elie" target="_blank" rel="noopener">Enviar DM</a>
           <a class="btn claro" href="https://www.instagram.com/hola.elie" target="_blank" rel="noopener">@hola.elie</a>
         </div>
+
+        <!-- La dirección de mail no aparece escrita: el JS la arma recién al enviar -->
+        <form class="mail" id="form-mail">
+          <h3>O mandame un mail</h3>
+          <label>Tu nombre o marca
+            <input type="text" name="marca" autocomplete="organization" required>
+          </label>
+          <label>Contame tu idea
+            <textarea name="mensaje" required></textarea>
+          </label>
+          <button class="btn" type="submit">Enviar mail</button>
+          <small>Se abre tu app de mail con el mensaje listo para enviar.</small>
+        </form>
       </div>
     </div>
   </section>
@@ -370,6 +396,7 @@ footer strong{font-family:var(--serif);font-size:1.3rem;color:var(--fucsia)}
   <div class="wrap">
     <strong>elie</strong>
     <p>Estilista y creadora UGC · Buenos Aires · © <span id="anio">2026</span></p>
+    <a class="credito" href="https://www.instagram.com/squid.designstudio/" target="_blank" rel="noopener">Website desarrollado por SquidStudio</a>
   </div>
 </footer>
 
@@ -422,7 +449,7 @@ footer strong{font-family:var(--serif);font-size:1.3rem;color:var(--fucsia)}
     const play = c.querySelector('.b-play');
 
     play.onclick = () => {
-      if (v.paused) { v.dataset.manual = ''; v.play(); } else { v.dataset.manual = '1'; v.pause(); }
+      if (v.paused) { v.dataset.manual = ''; cargar(v); v.play().catch(() => {}); } else { v.dataset.manual = '1'; v.pause(); }
     };
     v.addEventListener('play',  () => { play.textContent = '⏸'; play.setAttribute('aria-label','Pausar'); });
     v.addEventListener('pause', () => { play.textContent = '▶'; play.setAttribute('aria-label','Reproducir'); });
@@ -439,20 +466,45 @@ footer strong{font-family:var(--serif);font-size:1.3rem;color:var(--fucsia)}
     };
   });
 
-  // Solo se reproducen los reels que se ven; los demás se pausan (y pierden el sonido)
-  const obs = new IntersectionObserver(entradas => {
-    entradas.forEach(e => {
+  // Carga perezosa: solo los reels cercanos tienen el video cargado.
+  // Los lejanos se descargan para liberar memoria y que nada se trabe.
+  function cargar(v)    { if (!v.getAttribute('src')) { v.src = v.dataset.src; v.load(); } }
+  function descargar(v) { if (v.getAttribute('src')) { v.pause(); v.removeAttribute('src'); v.load(); } }
+  const cerca = new IntersectionObserver(es => {
+    es.forEach(e => { const v = e.target.querySelector('video'); e.isIntersecting ? cargar(v) : descargar(v); });
+  }, {root: pista, rootMargin: '0px 450px 0px 450px'});
+  reels.forEach(r => cerca.observe(r));
+
+  // Reproducción: solo los reels visibles, y todo en pausa si la sección o la pestaña no se ven
+  const visibles = new Set();
+  let enPantalla = true;
+  const reanudar   = () => visibles.forEach(v => { if (!v.dataset.manual) v.play().catch(() => {}); });
+  const pausarTodos = () => reels.forEach(r => r.querySelector('video').pause());
+  const obs = new IntersectionObserver(es => {
+    es.forEach(e => {
       const v = e.target.querySelector('video');
-      if (e.isIntersecting) { if (!v.dataset.manual) v.play().catch(() => {}); }
-      else { v.pause(); silenciar(e.target, true); }
+      if (e.isIntersecting) { cargar(v); visibles.add(v); if (enPantalla && !v.dataset.manual) v.play().catch(() => {}); }
+      else { visibles.delete(v); v.pause(); silenciar(e.target, true); }
     });
   }, {root: pista, threshold: 0.6});
   reels.forEach(r => obs.observe(r));
+  new IntersectionObserver(([e]) => { enPantalla = e.isIntersecting; enPantalla ? reanudar() : pausarTodos(); }).observe(pista);
+  document.addEventListener('visibilitychange', () => document.hidden ? pausarTodos() : (enPantalla && reanudar()));
 
   // Flechas del encabezado
   const paso = () => reels[0].offsetWidth + 18;
   document.getElementById('prev').onclick = () => pista.scrollBy({left: -paso(), behavior:'smooth'});
   document.getElementById('next').onclick = () => pista.scrollBy({left:  paso(), behavior:'smooth'});
+
+  // Mail directo: la dirección se arma al enviar, no está escrita en el HTML
+  document.getElementById('form-mail').addEventListener('submit', e => {
+    e.preventDefault();
+    const f = e.target;
+    const para = ['ellinaazn', 'gmail.com'].join('@');
+    const asunto = 'Colaboración UGC con ' + f.marca.value.trim();
+    const cuerpo = f.mensaje.value.trim() + '\n\n' + f.marca.value.trim();
+    location.href = 'mailto:' + para + '?subject=' + encodeURIComponent(asunto) + '&body=' + encodeURIComponent(cuerpo);
+  });
 </script>
 </body>
 </html>
