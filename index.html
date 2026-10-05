@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Elie · Estilista y creadora de contenido UGC · Buenos Aires</title>
+<meta name="description" content="Portfolio UGC de Elie: estilista y creadora de contenido en Buenos Aires. Reels y fotos para marcas de indumentaria y accesorios.">
+
+<!-- Tipografías: Fraunces (serif editorial con carácter) + DM Sans (legible en celular) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,900;1,9..144,600&display=swap" rel="stylesheet">
+
+<style>
+/* ============ 1. VARIABLES (paleta sin negro) ============ */
+:root{
+  --naranja:#FF6A13;
+  --fucsia:#E8167F;
+  --lima:#C8F23A;
+  --rosa:#FFC4DD;
+  --durazno:#FFD9B8;
+  --fondo:#FFF4F8;        /* rosa muy claro */
+  --tinta:#4A0F3A;        /* ciruela profundo: reemplaza al negro */
+  --serif:'Fraunces',Georgia,serif;
+  --sans:'DM Sans',system-ui,sans-serif;
+  --radio:28px;
+  --max:1120px;
+}
+
+/* ============ 2. BASE ============ */
+*,*::before,*::after{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{
+  font-family:var(--sans);font-size:1.05rem;line-height:1.65;color:var(--tinta);
+  background-color:var(--fondo);
+  /* Polka dots sutiles en todo el sitio */
+  background-image:radial-gradient(rgba(232,22,127,.16) 2.5px,transparent 3px);
+  background-size:26px 26px;
+  overflow-x:hidden;
+}
+img,video{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3{font-family:var(--serif);line-height:1.05;font-weight:900;letter-spacing:-.02em}
+h2{font-size:clamp(2.2rem,7vw,3.8rem);margin-bottom:.4em}
+em{font-style:italic;font-weight:600}
+:focus-visible{outline:3px solid var(--fucsia);outline-offset:3px}
+.wrap{width:min(100% - 2.5rem,var(--max));margin-inline:auto}
+section{padding:4.5rem 0}
+
+/* Botones */
+.btn{
+  display:inline-block;text-decoration:none;font-weight:700;
+  padding:.9em 1.6em;border-radius:999px;border:2.5px solid var(--tinta);
+  background:var(--lima);box-shadow:4px 4px 0 var(--tinta);
+  transition:transform .15s,box-shadow .15s;
+}
+.btn:hover{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--tinta)}
+.btn.fucsia{background:var(--fucsia);color:#fff}
+
+/* ============ 3. HEADER FLOTANTE ============ */
+header{position:fixed;inset:0 0 auto 0;z-index:50;padding:.8rem 1rem;pointer-events:none}
+.nav{
+  pointer-events:auto;max-width:var(--max);margin-inline:auto;
+  display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  background:rgba(255,244,248,.97);
+  border:2.5px solid var(--tinta);border-radius:999px;padding:.5rem .6rem .5rem 1.2rem;
+}
+.logo{font-family:var(--serif);font-weight:900;font-size:1.4rem;text-decoration:none;color:var(--fucsia)}
+.nav ul{display:none;list-style:none;padding:0;gap:1.6rem}
+.nav ul a{text-decoration:none;font-weight:500}
+.nav ul a:hover{color:var(--fucsia)}
+.nav .btn{padding:.55em 1.1em;font-size:.95rem;box-shadow:3px 3px 0 var(--tinta)}
+/* Menú móvil: se abre con el botón ☰ */
+.burger{display:inline-grid;place-items:center;width:42px;height:42px;border-radius:50%;
+  border:2.5px solid var(--tinta);background:var(--rosa);font-size:1.2rem;cursor:pointer;color:var(--tinta)}
+.nav-actions{display:flex;gap:.5rem;align-items:center}
+.nav.abierto ul{
+  display:flex;flex-direction:column;position:absolute;left:1rem;right:1rem;top:4.6rem;
+  background:var(--fondo);border:2.5px solid var(--tinta);border-radius:var(--radio);padding:1.2rem 1.5rem;gap:1rem;
+}
+
+/* ============ 4. HERO ============ */
+.hero{padding-top:7rem;overflow:hidden}
+.hero .wrap{display:grid;gap:2.5rem;align-items:center}
+.hero h1{font-size:clamp(3rem,13vw,6.5rem);color:var(--fucsia)}
+.hero h1 span{color:var(--naranja)}
+.hero p{max-width:34ch;margin:1.2rem 0 1.8rem;font-size:1.15rem}
+.hero .acciones{display:flex;flex-wrap:wrap;gap:.9rem}
+.foto-hero{position:relative;justify-self:center;width:min(100%,520px);aspect-ratio:4/5.2}
+.foto-hero::before{ /* panel naranja grande (arco) */
+  content:"";position:absolute;inset:0;background:var(--naranja);
+  border:3px solid var(--tinta);border-radius:999px 999px var(--radio) var(--radio);
+}
+.foto-hero img{ /* foto grande: ocupa todo el naranja y sobresale un poco */
+  position:absolute;z-index:1;left:-9%;bottom:0;width:118%;height:112%;
+  object-fit:contain;object-position:bottom center;
+  filter:drop-shadow(6px 8px 0 rgba(74,15,58,.22));
+}
+.sticker{
+  position:absolute;z-index:2;right:2%;bottom:8%;background:var(--lima);
+  border:2.5px solid var(--tinta);border-radius:999px;padding:.4em 1em;
+  font-family:var(--serif);font-weight:900;transform:rotate(-8deg);
+}
+
+/* ============ 5. SOBRE MÍ ============ */
+.sobre .caja{
+  background:var(--rosa);border:3px solid var(--tinta);border-radius:var(--radio);
+  padding:2rem 1.5rem;display:grid;gap:1.5rem;box-shadow:8px 8px 0 var(--naranja);
+}
+.sobre ul{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:.6rem}
+.sobre li{background:var(--fondo);border:2px solid var(--tinta);border-radius:999px;padding:.35em 1em;font-weight:500}
+.sobre li:nth-child(2n){background:var(--lima)}
+.sobre li:nth-child(3n){background:var(--durazno)}
+
+/* ============ 6. MARCAS ============ */
+.marcas{background:var(--naranja);color:#fff;
+  background-image:radial-gradient(rgba(255,255,255,.28) 3px,transparent 3.5px);background-size:26px 26px}
+.marcas h2{color:#fff}
+.grid-marcas{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:2rem}
+.marca{
+  display:grid;place-items:center;text-align:center;min-height:110px;padding:1rem;
+  background:var(--fondo);color:var(--tinta);text-decoration:none;
+  font-family:var(--serif);font-weight:900;font-size:1.15rem;line-height:1.15;
+  border:3px solid var(--tinta);border-radius:var(--radio);box-shadow:5px 5px 0 var(--tinta);
+  transition:transform .2s,background .2s;
+}
+.marca small{display:block;font-family:var(--sans);font-weight:500;font-size:.8rem;margin-top:.3rem}
+.marca:hover{background:var(--lima);transform:rotate(-2deg) translateY(-3px)}
+
+/* ============ 7. REELS (carrusel con controles) ============ */
+.reels-cab{display:flex;justify-content:space-between;align-items:flex-end;gap:1rem}
+.flechas{display:flex;gap:.6rem;margin-bottom:.6rem}
+.flecha{width:46px;height:46px;border-radius:50%;border:2.5px solid var(--tinta);background:var(--lima);
+  box-shadow:3px 3px 0 var(--tinta);font-size:1.2rem;cursor:pointer;color:var(--tinta)}
+.flecha:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--tinta)}
+.reels{display:flex;gap:1.1rem;overflow-x:auto;scroll-snap-type:x mandatory;
+  padding:1rem 1.25rem 1.8rem;margin-inline:-1.25rem;scrollbar-width:none}
+.reels::-webkit-scrollbar{display:none}
+.reel{
+  position:relative;flex:0 0 68%;scroll-snap-align:center;aspect-ratio:9/16;overflow:hidden;
+  border:3px solid var(--tinta);border-radius:var(--radio);background:var(--rosa);
+  box-shadow:6px 6px 0 var(--fucsia);
+}
+.reel:nth-child(even){box-shadow:6px 6px 0 var(--lima)}
+.reel video{width:100%;height:100%;object-fit:cover}
+/* Botones de cada reel: pausa, sonido, siguiente (los crea el JS) */
+.ctrl{position:absolute;left:0;right:0;bottom:.7rem;display:flex;justify-content:center;gap:.5rem}
+.ctrl button{width:42px;height:42px;border-radius:50%;border:2.5px solid var(--tinta);
+  background:var(--fondo);font-size:1rem;cursor:pointer;color:var(--tinta)}
+.ctrl button:hover{background:var(--lima)}
+.pista{font-size:.9rem;font-weight:500}
+
+/* ============ 8. FOTOS / LOOKS ============ */
+.grid-fotos{display:grid;grid-template-columns:repeat(2,1fr);gap:.9rem;margin-top:2rem}
+.foto{
+  overflow:hidden;border:3px solid var(--tinta);border-radius:var(--radio);
+  aspect-ratio:4/5;background:var(--durazno);
+}
+.foto:nth-child(3n+1){background:var(--rosa)}
+.foto:nth-child(3n+2){background:var(--lima)}
+.foto img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.foto:hover img{transform:scale(1.07) rotate(1.5deg)} /* zoom + giro leve */
+
+/* ============ 8b. TIRA ARCOÍRIS ============ */
+.tira{
+  position:relative;margin-top:4.5rem;transform:rotate(-1.5deg);padding:.8rem;
+  background:var(--fondo);border:3px solid var(--tinta);border-radius:var(--radio);
+}
+.tira::before{ /* franja de arcoíris que la marca como pieza aparte */
+  content:"";position:absolute;left:1.5rem;right:1.5rem;top:-13px;height:12px;border-radius:99px;
+  border:2.5px solid var(--tinta);
+  background:linear-gradient(90deg,#FF3B4E,#FF6A13,#FFD23F,#37C96B,#52CCF5,#3A5BEF,#9054E8);
+}
+.arco{display:flex;gap:.6rem;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
+.arco::-webkit-scrollbar{display:none}
+.arco figure{flex:0 0 42%;scroll-snap-align:start;aspect-ratio:3/4.4;padding:6px;background:var(--c);
+  border:3px solid var(--tinta);border-radius:20px;overflow:hidden}
+.arco img{width:100%;height:100%;object-fit:cover;border-radius:13px;background:var(--fondo)}
+
+/* ============ 9. CONTACTO ============ */
+.contacto .caja{
+  text-align:center;background:var(--fucsia);color:#fff;border:3px solid var(--tinta);
+  border-radius:var(--radio);padding:3rem 1.5rem;box-shadow:8px 8px 0 var(--lima);
+  background-image:radial-gradient(rgba(255,255,255,.25) 3px,transparent 3.5px);background-size:26px 26px;
+}
+.contacto p{max-width:42ch;margin:0 auto 1.8rem}
+.contacto .acciones{display:flex;flex-wrap:wrap;gap:1rem;justify-content:center}
+.contacto .btn.claro{background:var(--fondo);color:var(--tinta)}
+
+/* Formulario de mail */
+.mail{margin:2.5rem auto 0;max-width:520px;text-align:left;display:grid;gap:1rem;
+  background:var(--fondo);color:var(--tinta);border:3px solid var(--tinta);
+  border-radius:var(--radio);padding:1.6rem;box-shadow:5px 5px 0 var(--tinta)}
+.mail h3{font-size:1.6rem;color:var(--fucsia)}
+.mail label{display:grid;gap:.35rem;font-weight:700;font-size:.95rem}
+.mail input,.mail textarea{font:inherit;font-weight:400;color:var(--tinta);background:#fff;
+  border:2.5px solid var(--tinta);border-radius:16px;padding:.7em 1em;width:100%}
+.mail textarea{min-height:120px;resize:vertical}
+.mail button.btn{justify-self:start;cursor:pointer;font-family:var(--sans);font-size:1rem;color:var(--tinta)}
+.mail small{font-size:.85rem}
+
+/* ============ 10. FOOTER ============ */
+footer{padding:2.5rem 0 3rem;text-align:center;font-size:.95rem}
+.legales{font-size:.85rem;margin-top:.5rem}
+.legales a{color:inherit}
+.credito{display:block;margin-top:1.4rem;font-size:.72rem;opacity:.65;text-decoration:none}
+.credito:hover{opacity:1;color:var(--fucsia)}
+footer strong{font-family:var(--serif);font-size:1.3rem;color:var(--fucsia)}
+
+/* ============ 11. ESCRITORIO ============ */
+@media (min-width:820px){
+  body{font-size:1.1rem}
+  section{padding:6.5rem 0}
+  .burger{display:none}
+  .nav ul{display:flex}
+  .hero{padding-top:9rem}
+  .hero .wrap{grid-template-columns:1.1fr .9fr}
+  .sobre .caja{grid-template-columns:1fr 1fr;padding:3rem;gap:3rem}
+  .grid-marcas{grid-template-columns:repeat(3,1fr);gap:1.4rem}
+  .reel{flex:0 0 calc(25% - .85rem)}
+  .reel:nth-child(even){transform:translateY(14px)}
+  .pista{display:none}
+  .grid-fotos{grid-template-columns:repeat(3,1fr);gap:1.4rem}
+  .foto:nth-child(3n+2){transform:translateY(24px)}
+  /* Tira arcoíris: las 7 a la vista, la que tocás se agranda */
+  .arco{overflow:visible}
+  .arco figure{flex:1 1 0;aspect-ratio:auto;height:440px;transition:flex-grow .5s ease}
+  .arco figure:hover{flex-grow:2.6}
+}
+
+/* Respeto a quienes prefieren menos movimiento */
+@media (prefers-reduced-motion:reduce){
+  *{transition:none!important;scroll-behavior:auto!important}
+}
+</style>
+</head>
+
+<body>
+
+<!-- ============ HEADER / NAVEGACIÓN ============ -->
+<header>
+  <nav class="nav" id="nav" aria-label="Principal">
+    <a href="#inicio" class="logo">elie</a>
+    <ul id="menu">
+      <li><a href="#sobre-mi">Sobre mí</a></li>
+      <li><a href="#marcas">Marcas</a></li>
+      <li><a href="#reels">Reels</a></li>
+      <li><a href="#looks">Looks</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a class="btn fucsia" href="#contacto">Trabajemos juntas</a>
+      <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu">☰</button>
+    </div>
+  </nav>
+</header>
+
+<main id="inicio">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <h1>Hola, soy <span>Elie</span></h1>
+        <p>Estilista y creadora de contenido en Buenos Aires. Si es colorido, enorme o no lo necesitaba pero igual lo compré, probablemente me lo veas puesto.</p>
+        <div class="acciones">
+          <a class="btn" href="#reels">Ver mis reels</a>
+          <a class="btn fucsia" href="https://ig.me/m/hola.elie" target="_blank" rel="noopener">Escribime por DM</a>
+        </div>
+      </div>
+      <div class="foto-hero">
+        <img src="foto_portada.png" alt="Elie, de cuerpo entero, vestida de naranja" width="840" height="1120">
+        <span class="sticker">UGC con onda</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SOBRE MÍ ============ -->
+  <section class="sobre" id="sobre-mi">
+    <div class="wrap">
+      <div class="caja">
+        <div>
+          <h2>Quién <em>soy</em></h2>
+          <p>Vivo en Buenos Aires, donde el negro es ley y yo hago lo contrario. Soy estilista y creadora de contenido, fan de la ropa que no necesito y de los accesorios enormes.</p>
+          <p style="margin-top:1rem">Soy mamá de mellizos, Alex y León, que colaboran en mis videos cuando tienen ganas. Spoiler: no siempre tienen ganas.</p>
+        </div>
+        <ul aria-label="Lo que me define">
+          <li>Estilista</li><li>Creadora UGC</li><li>Buenos Aires</li>
+          <li>Accesorios enormes</li><li>Mamá de Alex y León</li><li>Anti-negro</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MARCAS ============ -->
+  <section class="marcas" id="marcas">
+    <div class="wrap">
+      <h2>Marcas con las que <em>colaboré</em></h2>
+      <p>Tocá una para ver su Instagram.</p>
+      <div class="grid-marcas">
+        <a class="marca" href="https://www.instagram.com/companiadesombreros" target="_blank" rel="noopener"><span>Compañía de Sombreros<small>@companiadesombreros</small></span></a>
+        <a class="marca" href="https://www.instagram.com/laspepasinst" target="_blank" rel="noopener"><span>Las Pepas<small>@laspepasinst</small></span></a>
+        <a class="marca" href="https://www.instagram.com/fikejoyas" target="_blank" rel="noopener"><span>Fike Joyas<small>@fikejoyas</small></span></a>
+        <a class="marca" href="https://www.instagram.com/casiopea_ba" target="_blank" rel="noopener"><span>Casiopea<small>@casiopea_ba</small></span></a>
+        <a class="marca" href="https://www.instagram.com/xentetiendaderopa" target="_blank" rel="noopener"><span>Xente Tienda de Ropa<small>@xentetiendaderopa</small></span></a>
+        <a class="marca" href="https://www.instagram.com/dudouvintage" target="_blank" rel="noopener"><span>Dudou Vintage<small>@dudouvintage</small></span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ REELS (video vertical, en loop) ============ -->
+  <section id="reels">
+    <div class="wrap">
+      <div class="reels-cab">
+        <h2>Reels <em>en acción</em></h2>
+        <div class="flechas">
+          <button class="flecha" id="prev" type="button" aria-label="Reels anteriores">←</button>
+          <button class="flecha" id="next" type="button" aria-label="Reels siguientes">→</button>
+        </div>
+      </div>
+      <p class="pista">Deslizá para ver más. Tocá los botones para pausar o activar el sonido.</p>
+      <!-- Los botones de cada reel los agrega el JS. Para sumar videos, copiá un bloque .reel -->
+      <div class="reels" id="reels-track">
+        <div class="reel"><video data-src="video_1.mp4" muted loop playsinline preload="none" disablepictureinpicture aria-label="Reel 1"></video></div>
+        <div class="reel"><video data-src="video_2.mp4" muted loop playsinline preload="none" disablepictureinpicture aria-label="Reel 2"></video></div>
+        <div class="reel"><video data-src="video_3.mp4" muted loop playsinline preload="none" disablepictureinpicture aria-label="Reel 3"></video></div>
+        <div class="reel"><video data-src="video_4.mp4" muted loop playsinline preload="none" disablepictureinpicture aria-label="Reel 4"></video></div>
+        <div class="reel"><video data-src="video_5.mp4" muted loop playsinline preload="none" disablepictureinpicture aria-label="Reel 5"></video></div>
+        <div class="reel"><video data-src="video_6.mp4" muted loop playsinline preload="none" disablepictureinpicture aria-label="Reel 6"></video></div>
+        <div class="reel"><video data-src="video_7.mp4" muted loop playsinline preload="none" disablepictureinpicture aria-label="Reel 7"></video></div>
+        <div class="reel"><video data-src="video_8.mp4" muted loop playsinline preload="none" disablepictureinpicture aria-label="Reel 8"></video></div>
+        <div class="reel"><video data-src="video_9.mp4" muted loop playsinline preload="none" disablepictureinpicture aria-label="Reel 9"></video></div>
+        <div class="reel"><video data-src="video_10.mp4" muted loop playsinline preload="none" disablepictureinpicture aria-label="Reel 10"></video></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ LOOKS Y PRODUCCIONES ============ -->
+  <section id="looks">
+    <div class="wrap">
+      <h2>Looks y <em>producciones</em></h2>
+      <div class="grid-fotos">
+        <!-- Para sumar más fotos, copiá un bloque .foto y cambiá el nombre del archivo -->
+        <figure class="foto"><img src="foto_1.jpg" alt="Look 1" loading="lazy"></figure>
+        <figure class="foto"><img src="foto_2.jpg" alt="Look 2" loading="lazy"></figure>
+        <figure class="foto"><img src="foto_3.jpg" alt="Look 3" loading="lazy"></figure>
+        <figure class="foto"><img src="foto_4.jpg" alt="Look 4" loading="lazy"></figure>
+        <figure class="foto"><img src="foto_5.jpg" alt="Look 5" loading="lazy"></figure>
+        <figure class="foto"><img src="foto_6.jpg" alt="Look 6" loading="lazy"></figure>
+      </div>
+
+        <!-- Tira arcoíris: foto_rojo.jpg, foto_naranja.jpg, foto_amarillo.jpg, foto_verde.jpg, foto_celeste.jpg, foto_azul.jpg, foto_violeta.jpg -->
+        <div class="tira" role="group" aria-label="Fotos de colores">
+          <div class="arco">
+            <figure style="--c:#FF3B4E"><img src="foto_rojo.jpg" alt="Foto roja" loading="lazy"></figure>
+            <figure style="--c:#FF6A13"><img src="foto_naranja.jpg" alt="Foto naranja" loading="lazy"></figure>
+            <figure style="--c:#FFD23F"><img src="foto_amarillo.jpg" alt="Foto amarilla" loading="lazy"></figure>
+            <figure style="--c:#37C96B"><img src="foto_verde.jpg" alt="Foto verde" loading="lazy"></figure>
+            <figure style="--c:#52CCF5"><img src="foto_celeste.jpg" alt="Foto celeste" loading="lazy"></figure>
+            <figure style="--c:#3A5BEF"><img src="foto_azul.jpg" alt="Foto azul" loading="lazy"></figure>
+            <figure style="--c:#9054E8"><img src="foto_violeta.jpg" alt="Foto violeta" loading="lazy"></figure>
+          </div>
+        </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACTO ============ -->
+  <section class="contacto" id="contacto">
+    <div class="wrap">
+      <div class="caja">
+        <h2>¿Hacemos algo <em>juntas</em>?</h2>
+        <p>Si tu marca de ropa o accesorios quiere videos y fotos con color y personalidad, escribime y lo armamos.</p>
+        <div class="acciones">
+          <a class="btn" href="https://ig.me/m/hola.elie" target="_blank" rel="noopener">Enviar DM</a>
+          <a class="btn claro" href="https://www.instagram.com/hola.elie" target="_blank" rel="noopener">@hola.elie</a>
+        </div>
+
+        <!-- La dirección de mail no aparece escrita: el JS la arma recién al enviar -->
+        <form class="mail" id="form-mail">
+          <h3>O mandame un mail</h3>
+          <label>Tu nombre o marca
+            <input type="text" name="marca" autocomplete="organization" required>
+          </label>
+          <label>Contame tu idea
+            <textarea name="mensaje" required></textarea>
+          </label>
+          <button class="btn" type="submit">Enviar mail</button>
+          <small>Se abre tu app de mail con el mensaje listo para enviar. Más info en la <a href="privacidad.html">Política de privacidad</a>.</small>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <strong>elie</strong>
+    <p>Estilista y creadora UGC · Buenos Aires · © <span id="anio">2026</span></p>
+    <p class="legales"><a href="terminos.html">Términos y condiciones</a> · <a href="privacidad.html">Política de privacidad</a></p>
+    <a class="credito" href="https://www.instagram.com/squid.designstudio/" target="_blank" rel="noopener">Website desarrollado por SquidStudio</a>
+  </div>
+</footer>
+
+<script>
+  // Menú móvil
+  const nav = document.getElementById('nav');
+  const burger = document.getElementById('burger');
+  burger.addEventListener('click', () => {
+    const abierto = nav.classList.toggle('abierto');
+    burger.setAttribute('aria-expanded', abierto);
+  });
+  // Cierra el menú al elegir una sección
+  document.querySelectorAll('#menu a').forEach(a => a.addEventListener('click', () => {
+    nav.classList.remove('abierto'); burger.setAttribute('aria-expanded', false);
+  }));
+  // Año automático en el footer
+  document.getElementById('anio').textContent = new Date().getFullYear();
+  // Fotos: si una no carga, prueba con otras extensiones (png, jpg, jpeg, webp, mayúsculas)
+  // y si no existe ninguna, queda el recuadro de color. Revisá que el nombre sea exacto.
+  const exts = ['png','jpg','jpeg','webp','PNG','JPG','JPEG'];
+  document.querySelectorAll('.foto img, .tira img, .foto-hero img').forEach(img => {
+    const src = img.getAttribute('src');
+    const base = src.replace(/\.[^.]+$/, '');
+    const probar = exts.filter(e => e !== src.split('.').pop());
+    let i = 0;
+    img.addEventListener('error', () => {
+      if (i < probar.length) { img.src = base + '.' + probar[i++]; } else { img.style.opacity = 0; }
+    });
+  });
+
+  // ===== Carrusel de reels =====
+  const pista = document.getElementById('reels-track');
+  const reels = [...pista.querySelectorAll('.reel')];
+
+  function silenciar(r, mudo) {
+    r.querySelector('video').muted = mudo;
+    const b = r.querySelector('.b-mute');
+    b.textContent = mudo ? '🔇' : '🔊';
+    b.setAttribute('aria-label', mudo ? 'Activar sonido' : 'Quitar sonido');
+  }
+
+  reels.forEach(r => {
+    const v = r.querySelector('video');
+    const c = document.createElement('div');
+    c.className = 'ctrl';
+    c.innerHTML = '<button type="button" class="b-play" aria-label="Pausar">⏸</button>' +
+                  '<button type="button" class="b-mute" aria-label="Activar sonido">🔇</button>' +
+                  '<button type="button" class="b-next" aria-label="Siguiente reel">⏭</button>';
+    r.appendChild(c);
+    const play = c.querySelector('.b-play');
+
+    play.onclick = () => {
+      if (v.paused) { v.dataset.manual = ''; cargar(v); v.play().catch(() => {}); } else { v.dataset.manual = '1'; v.pause(); }
+    };
+    v.addEventListener('play',  () => { play.textContent = '⏸'; play.setAttribute('aria-label','Pausar'); });
+    v.addEventListener('pause', () => { play.textContent = '▶'; play.setAttribute('aria-label','Reproducir'); });
+
+    // Sonido: solo un reel con sonido a la vez
+    c.querySelector('.b-mute').onclick = () => {
+      const activar = v.muted;
+      reels.forEach(o => silenciar(o, true));
+      if (activar) silenciar(r, false);
+    };
+    // Siguiente: pasa al próximo reel (el último vuelve al primero)
+    c.querySelector('.b-next').onclick = () => {
+      (r.nextElementSibling || reels[0]).scrollIntoView({behavior:'smooth', inline:'center', block:'nearest'});
+    };
+  });
+
+  // Carga perezosa: solo los reels cercanos tienen el video cargado.
+  // Los lejanos se descargan para liberar memoria y que nada se trabe.
+  function cargar(v)    { if (!v.getAttribute('src')) { v.src = v.dataset.src; v.load(); } }
+  function descargar(v) { if (v.getAttribute('src')) { v.pause(); v.removeAttribute('src'); v.load(); } }
+  const cerca = new IntersectionObserver(es => {
+    es.forEach(e => { const v = e.target.querySelector('video'); e.isIntersecting ? cargar(v) : descargar(v); });
+  }, {root: pista, rootMargin: '0px 450px 0px 450px'});
+  reels.forEach(r => cerca.observe(r));
+
+  // Reproducción: solo los reels visibles, y todo en pausa si la sección o la pestaña no se ven
+  const visibles = new Set();
+  let enPantalla = true;
+  const reanudar   = () => visibles.forEach(v => { if (!v.dataset.manual) v.play().catch(() => {}); });
+  const pausarTodos = () => reels.forEach(r => r.querySelector('video').pause());
+  const obs = new IntersectionObserver(es => {
+    es.forEach(e => {
+      const v = e.target.querySelector('video');
+      if (e.isIntersecting) { cargar(v); visibles.add(v); if (enPantalla && !v.dataset.manual) v.play().catch(() => {}); }
+      else { visibles.delete(v); v.pause(); silenciar(e.target, true); }
+    });
+  }, {root: pista, threshold: 0.6});
+  reels.forEach(r => obs.observe(r));
+  new IntersectionObserver(([e]) => { enPantalla = e.isIntersecting; enPantalla ? reanudar() : pausarTodos(); }).observe(pista);
+  document.addEventListener('visibilitychange', () => document.hidden ? pausarTodos() : (enPantalla && reanudar()));
+
+  // Flechas del encabezado
+  const paso = () => reels[0].offsetWidth + 18;
+  document.getElementById('prev').onclick = () => pista.scrollBy({left: -paso(), behavior:'smooth'});
+  document.getElementById('next').onclick = () => pista.scrollBy({left:  paso(), behavior:'smooth'});
+
+  // Mail directo: la dirección se arma al enviar, no está escrita en el HTML
+  document.getElementById('form-mail').addEventListener('submit', e => {
+    e.preventDefault();
+    const f = e.target;
+    const para = ['ellinaazn', 'gmail.com'].join('@');
+    const asunto = 'Colaboración UGC con ' + f.marca.value.trim();
+    const cuerpo = f.mensaje.value.trim() + '\n\n' + f.marca.value.trim();
+    location.href = 'mailto:' + para + '?subject=' + encodeURIComponent(asunto) + '&body=' + encodeURIComponent(cuerpo);
+  });
+</script>
+</body>
+</html>
