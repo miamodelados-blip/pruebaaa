@@ -1,0 +1,21 @@
+/* Estilos compartidos de terminos.html y privacidad.html (misma identidad que el portfolio) */
+:root{--naranja:#FF6A13;--fucsia:#E8167F;--lima:#C8F23A;--rosa:#FFC4DD;--fondo:#FFF4F8;--tinta:#4A0F3A;
+  --serif:'Fraunces',Georgia,serif;--sans:'DM Sans',system-ui,sans-serif;--radio:28px}
+*{box-sizing:border-box;margin:0}
+body{font-family:var(--sans);line-height:1.7;color:var(--tinta);background-color:var(--fondo);
+  background-image:radial-gradient(rgba(232,22,127,.16) 2.5px,transparent 3px);background-size:26px 26px}
+.wrap{width:min(100% - 2.5rem,760px);margin:0 auto;padding:2rem 0 3rem}
+.volver{display:inline-block;font-weight:700;text-decoration:none;color:var(--tinta);background:var(--lima);
+  border:2.5px solid var(--tinta);border-radius:999px;padding:.5em 1.2em;box-shadow:3px 3px 0 var(--tinta)}
+h1{font-family:var(--serif);font-weight:900;font-size:clamp(2.2rem,8vw,3.6rem);line-height:1.05;
+  letter-spacing:-.02em;color:var(--fucsia);margin:1.5rem 0 .4rem}
+h2{font-family:var(--serif);font-weight:900;font-size:1.35rem;margin:2rem 0 .5rem;color:var(--naranja)}
+p,li{margin-bottom:.7rem}
+ul{padding-left:1.3rem}
+a{color:var(--fucsia)}
+:focus-visible{outline:3px solid var(--fucsia);outline-offset:3px}
+.caja{background:var(--rosa);border:3px solid var(--tinta);border-radius:var(--radio);
+  padding:1.2rem 1.4rem;margin:1.5rem 0;box-shadow:6px 6px 0 var(--naranja)}
+.caja p:last-child{margin-bottom:0}
+.falta{background:var(--lima);border-radius:6px;padding:0 .3em}
+.pie{border-top:3px dotted var(--fucsia);margin-top:2.5rem;padding-top:1.2rem;font-size:.9rem}
